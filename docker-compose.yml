@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres
+    ports:
+      - "5440:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: onlyfordev
