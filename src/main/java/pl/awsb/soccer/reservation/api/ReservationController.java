@@ -28,7 +28,7 @@ public class ReservationController {
     }
 
     @PostMapping
-    public Reservation createReservation(@LoggedUser CustomUserDetails userDetails, CreateReservationRequest request) {
+    public Reservation createReservation(@LoggedUser CustomUserDetails userDetails, @RequestBody CreateReservationRequest request) {
         return reservationService.createReservation(userDetails.getUser(), request);
     }
 

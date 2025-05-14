@@ -82,7 +82,9 @@ public class SecurityConfig {
             return new AuthorizationDecision(!Strings.isNullOrEmpty(key) && swaggerKey.equals(key));
         };
 
-        http
+        http    
+                .cors()
+                .and()
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                        // .requestMatchers(swaggerUris).access(swaggerAuthorizationContext)
